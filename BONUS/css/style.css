@@ -71,6 +71,7 @@ body {
 .navigation {
     position: absolute;
     background-color: lightgrey;
+    opacity: 0.8;
     display: flex;
     justify-content: center;
     align-items: center;
