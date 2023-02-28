@@ -70,8 +70,6 @@ nextDom.addEventListener('click',
             //attivo l'overlay sulla nuova immagine
             imagesSequenceDom[activeImage].classList.add('overlay');
 
-            prevDom.classList.remove('hide');    
-
         } else if (activeImage == imagesWrapperDom.length - 1) {
             //rimuovo l'immagine corrente
             imagesWrapperDom[activeImage].classList.remove('show');
@@ -83,8 +81,6 @@ nextDom.addEventListener('click',
             imagesWrapperDom[activeImage].classList.add('show');
             //attivo l'overlay sulla nuova immagine
             imagesSequenceDom[activeImage].classList.add('overlay');
-
-            prevDom.classList.remove('hide');   
         }
     }
 );
@@ -104,20 +100,17 @@ prevDom.addEventListener('click',
             //attivo l'overlay sulla nuova immagine
             imagesSequenceDom[activeImage].classList.add('overlay');
 
-            nextDom.classList.remove('hide');
         } else if (activeImage == 0) {
             //rimuovo l'immagine corrente
             imagesWrapperDom[activeImage].classList.remove('show');
             //levo l'overlay dall'immagine corrente
             imagesSequenceDom[activeImage].classList.remove('overlay');
             //assegno un valore in meno all'immagine attuale per cambiarla con l'immagine precedente
-            activeImage = 4;
+            activeImage = (imagesWrapperDom.length - 1);
             //mostro l'immagine precedente
             imagesWrapperDom[activeImage].classList.add('show');
             //attivo l'overlay sulla nuova immagine
             imagesSequenceDom[activeImage].classList.add('overlay');
-
-            nextDom.classList.remove('hide');
         }
     }
 );
