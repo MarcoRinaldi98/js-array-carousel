@@ -40,11 +40,38 @@ html{
 }
 .image {
     object-fit: cover;
+    object-position: right;
     width: 100%;
     height: 100%;
 }
 .image-wrapper.show {
     display: block;
+}
+.navigation {
+    position: absolute;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+}
+#next {
+    bottom: 10px;
+}
+#prev {
+    top: 10px;
+}
+#next.hide {
+    display: none;
+}
+#prev.hide {
+    display: none;
 }
 
 

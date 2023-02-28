@@ -1,7 +1,7 @@
 /*
     JAVASCRIPT
 */
-//definisco le variabili
+
 //array
 const imagesArray = [
     'img/01.webp',
@@ -11,6 +11,7 @@ const imagesArray = [
     'img/05.webp'   
 ];
 
+//variabile dove verranno inserite le immagini del carousel
 const imageListDom = document.querySelector('.image-list'); 
 
 let sliderContent = "";
@@ -35,3 +36,48 @@ let activeImage = 0;
 
 //rendo solo la prima immagine della lista visibile
 imagesWrapperDom[activeImage].classList.add('show');
+
+//variabile pulsante avanti
+const nextDom = document.querySelector('#next');
+//variabile pulsante indietro
+const prevDom = document.querySelector('#prev');
+
+//evento per il click del pulsante avanti
+nextDom.addEventListener('click',
+    function() {
+        if (activeImage < imagesWrapperDom.length - 1) {
+            //rimuovo l'immagine corrente
+            imagesWrapperDom[activeImage].classList.remove('show');
+            //assegno un valore in piu all'immagine attuale per cambiarla con l'immagine successiva
+            activeImage++;
+            //mostro l'immagine successiva
+            imagesWrapperDom[activeImage].classList.add('show');
+
+            prevDom.classList.remove('hide');
+
+            if (activeImage == imagesWrapperDom.length - 1) {
+                nextDom.classList.add('hide');
+            } 
+        }    
+    }
+);
+
+//evento per il click del pulsante indietro
+prevDom.addEventListener('click',
+    function() {
+        if (activeImage > 0) {
+            //rimuovo l'immagine corrente
+            imagesWrapperDom[activeImage].classList.remove('show');
+            //assegno un valore in meno all'immagine attuale per cambiarla con l'immagine precedente
+            activeImage--;
+            //mostro l'immagine precedente
+            imagesWrapperDom[activeImage].classList.add('show');
+
+            nextDom.classList.remove('hide');
+
+            if (activeImage == 0) {
+                prevDom.classList.add('hide');
+            } 
+        }
+    }
+);
