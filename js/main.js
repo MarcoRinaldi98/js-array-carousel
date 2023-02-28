@@ -27,3 +27,11 @@ for (let i = 0; i < imagesArray.length; i++) {
 //trasferisco la lista di tutti i div prodotti nel container nell'html
 imageListDom.innerHTML = sliderContent;
 console.log(imageListDom);
+
+const imagesWrapperDom = document.getElementsByClassName('image-wrapper');
+
+//assegno il valore 0 per indicare la prima immagine della lista
+let activeImage = 0;
+
+//rendo solo la prima immagine della lista visibile
+imagesWrapperDom[activeImage].classList.add('show');
