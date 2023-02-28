@@ -21,6 +21,9 @@
 html{
     font-family: sans-serif;
 }
+body {
+    background-color: black;
+}
 
 .container {
     width: 80vw;
@@ -60,6 +63,10 @@ html{
 .box {
     width: 100%;
     height: calc(100% / 5);
+}
+.overlay {
+    border: 5px solid white;
+    opacity: 0.5;
 }
 .navigation {
     position: absolute;

@@ -40,11 +40,43 @@ imageSequence.innerHTML = sequenceContent;
 console.log(imageSequence);
 
 const imagesWrapperDom = document.getElementsByClassName('image-wrapper');
-const imageSequenceDom = document.getElementsByClassName('box');
+const imagesSequenceDom = document.getElementsByClassName('box');
 
 //assegno il valore 0 per indicare la prima immagine della lista
 let activeImage = 0;
 
 //rendo solo la prima immagine della lista visibile
 imagesWrapperDom[activeImage].classList.add('show');
+imagesSequenceDom[activeImage].classList.add('overlay');
+
+const nextDom = document.querySelector('#next');
+const prevDom = document.querySelector('#prev');
+
+nextDom.addEventListener('click',
+    function() {
+        if (activeImage < imagesWrapperDom.length - 1) {
+            imagesWrapperDom[activeImage].classList.remove('show');
+            imagesSequenceDom[activeImage].classList.remove('overlay');
+            activeImage++;
+            imagesWrapperDom[activeImage].classList.add('show');
+            imagesSequenceDom[activeImage].classList.add('overlay');
+
+            prevDom.classList.remove('hide');
+        }    
+    }
+);
+
+prevDom.addEventListener('click',
+    function() {
+        if (activeImage > 0) {
+            imagesWrapperDom[activeImage].classList.remove('show');
+            imagesSequenceDom[activeImage].classList.remove('overlay');
+            activeImage--;
+            imagesWrapperDom[activeImage].classList.add('show');
+            imagesSequenceDom[activeImage].classList.add('overlay');
+
+            nextDom.classList.remove('hide');
+        }
+    }
+);
 
