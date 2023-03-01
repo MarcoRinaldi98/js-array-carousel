@@ -68,7 +68,7 @@ nextDom.addEventListener('click',
             activeImage++;
 
         } else if (activeImage == imagesWrapperDom.length - 1) {
-            //assegno un valore in piu all'immagine attuale per cambiarla con l'immagine successiva
+            //assegno il vaore minimo della lista per farla ricominciare dall'inizio
             activeImage = 0;
         }
 
@@ -93,7 +93,7 @@ prevDom.addEventListener('click',
             activeImage--;
 
         } else if (activeImage == 0) {
-            //assegno un valore in meno all'immagine attuale per cambiarla con l'immagine precedente
+            //assegno il vaore massimo della lista per farla ricominciare della fine
             activeImage = (imagesWrapperDom.length - 1);
         }
 
